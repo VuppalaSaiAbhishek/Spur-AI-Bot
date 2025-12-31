@@ -22,7 +22,12 @@ const ChatInput = ({ message, setMessage, loading, handleAction, textareaRef }: 
               opacity: ${loading ? '1 !important' : '0.6 !important'};
             }
           `}</style>
-          <button onClick={handleAction} disabled={loading || !message.trim()} className={`btn border-0 rounded-3 d-flex align-items-center justify-content-center ms-2 w-12 h-12 ${message.trim() && !loading ? "bg-[#19c37d] text-white" : "bg-[#40414f] text-gray-500"}`}>
+          <button 
+            onClick={handleAction} 
+            disabled={loading || !message.trim()} 
+            className={`border-0 rounded-3 d-flex align-items-center justify-content-center ms-2 w-12 h-12 bg-transparent 
+              ${message.trim() && !loading ? "text-white" : "text-secondary opacity-50"}`}
+          >
             <i className="fa-solid fa-paper-plane"></i>
           </button>
         </div>

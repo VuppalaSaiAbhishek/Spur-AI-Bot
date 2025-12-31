@@ -17,7 +17,7 @@ export async function generateAIResponse(Prompt:string,history:any[]=[]) {
         const ApiResponce = await genAI.models.generateContent({
         model:"gemini-2.5-flash",
         contents:[
-            {role:"system",parts:[{text:SYSTEM_PROMPT}]},
+            {role:"user",parts:[{text:SYSTEM_PROMPT}]},
             ...history,
             {
                 role: "user",

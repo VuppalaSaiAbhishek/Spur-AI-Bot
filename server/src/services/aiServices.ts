@@ -12,12 +12,13 @@ export async function  processUserMessage(Userprompt:string,sessionId:string|nul
             sid = await createSession()
         }
         const history = await getChatHistory(sid);
+
         await saveMessage(sid,'user',Userprompt);
         const aiResponse = await generateAIResponse(Userprompt,history);
         if (!aiResponse || aiResponse.trim() === "") {
             throw new Error("Empty response from AI");
         }
-        await saveMessage(sid,'ai',aiResponse);
+        await saveMessage(sid,'model',aiResponse);
         return {aiResponse,sid};
         
     } catch (error:any) {
