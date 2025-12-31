@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const API_BASE_URL = process.env.REACT_APP_API_URL;
+const API_BASE_URL = "https://spur-ai-bot.onrender.com";
 
 export const sendMessage = async(userText:string,sid:string | null)=>{
     console.log(userText,sid);
@@ -12,6 +12,7 @@ export const sendMessage = async(userText:string,sid:string | null)=>{
         },{
             headers: { 'Content-Type': 'application/json' }
         });
+        console.log(response);
         return response; 
     } 
     catch (error) {
