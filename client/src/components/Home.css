@@ -1,0 +1,27 @@
+.form-control:focus {
+  box-shadow: none !important;
+  outline: none !important;
+  border-color: transparent !important;
+}
+.typing-bubble {
+  background-color: #394242;
+  border-radius: 16px;
+  border-top-left-radius: 2px;
+  padding: 10px 18px;
+  display: flex;
+  gap: 6px;
+  width: fit-content;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  animation: wave-animation 1.2s infinite ease-in-out;
+}
+
+@keyframes wave-animation {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+  30% { transform: translateY(-6px); opacity: 1; }
+}
